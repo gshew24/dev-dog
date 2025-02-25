@@ -12,8 +12,8 @@
 ### Instructions
 
 1. download & unzip to work locally
-2. start with the index and look for todo and dog emoji 🐶 (tip: TODO extension)
-3. do not delete the "TODO:🐶No." comments. You may add your own remarks, just make it clear to me they are yours, in a new comment with your initials or own emoji.
+2. start with the `index` and look for todo and dog emoji 🐶 (tip: TODO extension)
+3. do not delete the "TODO:🐶#" comments. You may add your own remarks, just make it clear to me they are yours, in a new comment with your initials or own emoji.
 4. Last 2 todo's:
 
 - TODO: 🐶19. Add in your authorship comments in THIS README document. (It's a joint authorship, right?). Include the date and that this is for your CIS 376 mid term exam, and don't forget to include at least ONE attribution to other code sources.
