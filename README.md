@@ -21,3 +21,18 @@
 
 5. test it all locally and, when ready,
 6. zip and submit to Canvas
+
+# Shelly the Seal's Shoe Shell Game
+
+## Authors:
+- Griffin Shewbart   
+
+## Course:  
+CIS 376 
+
+## Date:  
+March 7, 2025  
+
+## Attribution:  
+Some background pattern code sourced from (https://www.transparenttextures.com/).  
+Bootstrap and jQuery libraries were used.

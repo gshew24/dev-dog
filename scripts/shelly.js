@@ -3,6 +3,9 @@ $(function() {
   $('.shoe').append(`
     <img src="shoeIcon.png" class="img-fluid"></img>`
   );
+  
+  $('.shoe').css('background-color', 'white');
+
   // TODO: 🐶11. this puts the shoes in the shoe class div, but could we **programatically** default out of that 'tomato' color 
   
   let score = 0; //score initialized at zero each reset
@@ -10,7 +13,7 @@ $(function() {
   function getWin()
     {
       // TODO: 🐶12. why are my numbers not working at all!  (hint: look at line 19 below as a clue)
-      return Math.floor((Math.random() * 10 + 1));
+      return Math.floor(Math.random() * 3) + 1;
     }
 
   let win = getWin(); //get the first winning num
@@ -37,12 +40,14 @@ $(function() {
         $('#gameResult').text('u win'); 
       }
       // TODO: 🐶13. this kinda works when they lose, but can you make into an "else if" so it is bulletproof? 
-      else {
+      else if (shoeNo != win) {
+        score -= 1;
+
         // TODO: 🐶14. Make the score go DOWN by one point if they lose
         // score ????; 
 
         // TODO: 🐶15. my colors aren't working like I want
-        $(this).removeClass('loseColor').addClass('winColor');
+        $(this).removeClass('winColor').addClass('loseColor');
 
         $('#gameResult').text('u not win'); //you lose!
       }
@@ -51,6 +56,7 @@ $(function() {
       }
   });
    // TODO: 🐶16. whew, that's a long IIFE in a method. Let's add a comment to let us know we've finsihed it (use that cool up arrow thing like at the end of the doc ready f/n)
+// ↑ End of doc ready function
 
   $('#replay').on('click', (e)=>{
     //todo: set all my shoes bak to normal color
@@ -66,10 +72,27 @@ $(function() {
 
   })
 
-  $('#reset').on('click', (e)=>{
+    $('#reset').on('click', (e)=>{
+      score = 0;
+      $('#score').text(score);
+      $('#gameResult').text('');     
+      $('.shoe').removeClass('winColor').removeClass('loseColor');
+      win = getWin();
+      $('#shellySeal').draggable('enable');
+      
     // TODO: 🐶17. I ran out of time, help me reset the game. 
+  });
 
     // TODO: 🐶18. warn the user that this will reset their score (+5 if not use alert method)  
+    $('#reset').on('click', (e) => {
+      if (confirm("Are you sure you want to reset the game? This will erase your score!")) {
+        score = 0; 
+        $('#score').text(score);
+        $('#gameResult').text('');
+        $('.shoe').removeClass('winColor').removeClass('loseColor');
+        win = getWin();
+        $('#shellySeal').draggable('enable');
+      }
   });
 
 
